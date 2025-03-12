@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de LED via ESP32 e Firebase</title>
+    
+    <style>
+        
+        body {
+            background-image: url('https://wallpapers.com/images/hd/classic-blue-circuit-board-v9sqijtzusq0u8hc.jpg');
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 105vh; 
+            margin: 50px; 
+        }
+
+        .content {
+            max-width: 800px; 
+            padding: 20px;
+            box-sizing: border-box; 
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #9c108a;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto; 
+        }
+
+        ul {
+            text-align: left; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Controle de <span class="led-word">LED</span> via ESP32 e Firebase</h1>
+        <p class="inline">Desenvolvedor:</p>
+        <h3 class="inline">Sylas</h3>        
+        <p id="ledStatus">Carregando...</p>
+        <button id="toggleButton" onclick="toggleLED()">Ligar</button>
+        <br><br>
+        <img src="wokwi.png" alt="Projeto no Wokwi" width="800" height="500" style="border: 5px solid rgb(175, 82, 184);">
+        <h2>Descrição do Projeto</h2>
+        <p>Este projeto permite controlar um <span class="led-word">LED</span> conectado ao ESP32 através de uma interface web, utilizando Firebase como backend.</p>
+        <h2>Passo a Passo</h2>
+        <ol>
+            <li>Monte e configure o circuito com o ESP32 e o <span class="led-word">LED</span>.(Bibliotecas incluidas: FireBase32)</li>
+            <li>Configure o Firebase e conecte o ESP32.(No Projeto está sendo utilizado o Realtime Database)</li>
+            <li>Acesse esta página para ligar e desligar o <span class="led-word">LED</span>.</li>
+        </ol>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://firebase.google.com/docs/" target="_blank">Documentação Firebase</a></li>
+            <li><a href="https://wokwi.com/" target="_blank">Wokwi - Simulação de Circuitos</a></li>
+            <li><a href = "https://wokwi.com/projects/424798476297304065" target="_blank">Projeto no Wokwi</a></li>
+        </ul>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, get, set, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB5DH-P3ASr4m5gHsyx_X7kkEZS6KvLOF0",
+            authDomain: "led-esp32-sylas.firebaseapp.com",
+            databaseURL: "https://led-esp32-sylas-default-rtdb.firebaseio.com",
+            projectId: "led-esp32-sylas",
+            storageBucket: "led-esp32-sylas.appspot.com",
+            messagingSenderId: "110955150912",
+            appId: "1:110955150912:web:251c7ea47200173830a9a5",
+            measurementId: "G-ZP01QVJ7TP"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const ledStatusRef = ref(database, "led/status");
+
+        function toggleLED() {
+            runTransaction(ledStatusRef, (currentState) => {
+                return currentState === "on" ? "off" : "on";
+            });
+        }
+
+        onValue(ledStatusRef, (snapshot) => {
+            const status = snapshot.val();
+            const ledStatusElement = document.getElementById("ledStatus");
+            const toggleButton = document.getElementById("toggleButton");
+            const ledWords = document.querySelectorAll(".led-word");
+
+            ledStatusElement.innerText = `LED está ${status}`;
+            toggleButton.innerText = status === "on" ? "Desligar" : "Ligar";
+
+            if (status === "on") {
+                ledStatusElement.style.color = "green"; 
+                ledWords.forEach(word => word.style.color = "green");
+            } else {
+                ledStatusElement.style.color = "red";
+                ledWords.forEach(word => word.style.color = "red");
+            }
+        });
+
+        window.toggleLED = toggleLED;
+    </script>
+
+</body>
+</html>
