@@ -1,0 +1,57 @@
+body{
+    font-family: Arial, sans-serif; /* Define um tipo de fonte */
+}
+
+section{
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 24px; /* Tamanho da Fonte */
+    text-align: center;
+}
+
+/* Adicionando espaçamento entre os elementos do formulario */
+form{
+    margin-top: 20px;
+}
+
+/* Adicionando uma borda e padding para os inputs */
+input,select{
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Estilizando os labels para ficarem mais visíveis */
+label{
+    font-weight: bold;
+}
+
+/* Estilizando o botão para ele se destacar */
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer; /* Deixa o mouse com o ponteiro de mãozinha */
+}
+
+/* Alterando a cor do botão ao passar o mouse */
+button:hover{
+    background-color: green;
+}
+
+/* Definindo uma margem para os parágrafos */
+p{
+    margin: 10px 0;
+}
+
+/* Garantindo que o formulário se ajuste bem em telas menores */
+@media (max-width: 600px){
+    section{
+        width: 90%;
+    }
+}
