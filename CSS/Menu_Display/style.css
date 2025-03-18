@@ -1,0 +1,67 @@
+/* Zera as configurações da página */
+
+*{
+    margin: 0; /* Zera a margem */
+    padding: 0; /* Zera espaço */
+    box-sizing: border-box; /* Zera Bordas */
+}
+
+header{
+    background-color: #582A72;
+    padding: 30px;
+    margin: 30px;
+}
+
+ul li{ /* Display Block: Ocupa todo o espaço disponivel */
+    /* Tira as bolinhas */
+    list-style: none;
+    display: inline;
+    padding: 8px;
+}
+
+a{ /* Inline: Ocupa apenas o espaço do elemento */  /* Não pega largura nem altura */
+
+    /* Tira o sublinhado */
+    text-decoration: none;
+    color: #9775AA;
+    font-weight: bold;
+    font-size: 18pt;
+    cursor: pointer;
+}
+
+a:hover{
+    color: #3D1255;
+    text-decoration: underline;
+    padding: 12px;
+    transition: 400ms;
+}
+
+section{
+    margin: 30px;
+}
+
+footer{
+    padding: 8px;
+    margin: 20px;
+}
+
+
+/*
+Classe, utilizado similar ao id, aplica propriedades especficias com base na classe correspondente
+*/
+
+h2{
+    padding: 10px;
+    background-color: #582A72;
+    color: #9775AA;
+}
+
+html{
+    scroll-behavior: smooth;
+    transition: 400ms;
+}
+
+
+#font-type{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
