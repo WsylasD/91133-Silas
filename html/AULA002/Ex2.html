@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-retro.css">
+    <title>Formulario de Contato</title>
+</head>
+<body>
+
+    <h1> Formulário de Contato</h1>
+
+    <form action="/enviar" method="post">
+        <!--Campo de texto para o nome-->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <!--Campo de Email-->
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <!--Campo de Senha-->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <!--Campo de Mensagem-->
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br><br>
+
+        <!--Botão para Enviar-->
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+</html>
