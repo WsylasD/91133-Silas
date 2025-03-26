@@ -1,0 +1,45 @@
+*{
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    border: 2px solid black;
+    width: 300px;
+    height: 240px;
+    border-radius: 15px;
+}
+
+form{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input{
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+button{
+    border-radius: 5px;
+    color: aliceblue;
+    background-color: purple;
+    height: 40px;
+}
+
+button:hover{
+    background-color: rgba(128, 0, 90, 0.815);
+    color: black;
+    cursor: pointer;
+}
