@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_contact.css">
-    <title>Pet Shop - Servicos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_contact.css">
+  <title>Pet Shop - Contatos</title>
 </head>
 <body>
-    <header class="cabeca_pet">
-        <img src="assets/pet-logo.jpg" alt="pet_logo">
+  <header class="cabeca_pet">
+    <img src="assets/pet-logo.jpg" alt="pet_logo">
+    <nav class="cabeca_itens_pet">
+      <a href="index.html">Início</a>
+      <a href="index_services.html">Serviços</a>
+      <a href="index_about.html">Sobre Nós</a>
+      <a href="index_contact.html">Contato</a>
+    </nav>
+  </header>
 
-        <nav class="cabeca_itens_pet">
-            <a href="index.html">Início</a>
-            <a href="index_services.html">Serviços</a>
-            <a href="index_about.html">Sobre Nós</a>
-            <a href="index_contact.html">Contato</a>
-        </nav>
-    </header>
+  <main class="principal_body">
+    <div class="welcome1">
+      <h1>🐾Nossos Meios de Contato🐾</h1>
+      <p>🐶Telefone: (11) 1234-5678</p>
+      <p>Email: contato@petshopalegriaanimal.com</p>
+      <p>WhatsApp: (11) 91234-5678</p>
+      <p>Facebook: facebook.com/petshopalegriaanimal</p>
+      <p>Instagram: @petshopalegriaanimal❤️</p>
+    </div>
 
-    <main class="principal_body">
-        <div class="welcome1">
-            <h1>🐾Nossos Meios de Contato🐾</h1>
-            <p>🐶Telefone: (11) 1234-5678</p>
-            <p>Email: contato@petshopalegriaanimal.com</p>
-            <p>WhatsApp: (11) 91234-5678</p>
-            <p>Facebook: facebook.com/petshopalegriaanimal</p>
-            <p>Instagram: @petshopalegriaanimal❤️</p>
-        </div>
+    <div class="contact">
+      <h2>🦎Fale Conosco🐩</h2>
+      <p>
+        Oferecemos serviços de alta qualidade para cuidar do seu animal de estimação. 
+        Banho, tosa, consultas veterinárias e muito mais!
+      </p>
+      <form class="WhatsApp_form">
+        <label for="usuario">Nome</label>
+        <input type="text" id="usuario" required>
 
-        <div class="contact">
-            <h2>🦎Fale Conosco🐩</h2>
-            <p>Oferecemos serviços de alta qualidade para cuidar do seu animal de estimação. Banho, tosa, consultas veterinárias e muito mais!</p>
-            <form class="WhatsApp_form">
-                <label for="usuario">Nome</label>
-                <input type="text" id="usuario" required>
-    
-                <label for="email">E-mail</label>
-                <input type="text" id="email" required>
+        <label for="email">E-mail</label>
+        <input type="text" id="email" required>
 
-                <label for="message">Mensagem</label>
-                <textarea id="mensagem" required></textarea>
-    
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-        <section class="WhatsApp_contact">
-            <p>Ou fale diretamente pelo WhatsApp!</p>
-            <a href="https://wa.me/5511912345678" class="WhatsApp_button">
-                <img src="assets/whatsapp.png" alt="WhatsApp">
-                Enviar Mensagem no WhatsApp
-            </a>
-        </section>
-    </main>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" required></textarea>
 
-    <footer class="rodape">
-        <p>&copy; 2024 WsylasD Pet Shop Alegria Animal🐾. All rights reserved.</p>
-    </footer>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <section class="WhatsApp_contact">
+      <p>Ou fale diretamente pelo WhatsApp!</p>
+      <a href="https://wa.me/5511912345678" class="WhatsApp_button">
+        <img src="assets/whatsapp.png" alt="WhatsApp">
+        Enviar Mensagem no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2024 WsylasD Pet Shop Alegria Animal🐾. All rights reserved.</p>
+  </footer>
 </body>
 </html>
