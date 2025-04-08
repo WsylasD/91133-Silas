@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="painel-style.css">
+    <title>Painel</title>
+</head>
+<body>
+    <h1>Bem-vindo(a) ao Painel de informações!</h1>
+    <p id="userWelcome">Carregando....</p>
+
+    <!--Botão para sair-->
+    <button id="logoutBtn">Sair</button>
+
+    <script>
+        // Recuperando o nome do usuário do localStorage
+        const username = localStorage.getItem("username");
+
+        // Se o nome do usuário estiver armazenado, exibe uma mensagem personalizada
+        if (username){
+            document.getElementById("userWelcome").textContent = `Bem-vindo, ${username}!`;
+        }else{
+            document.getElementById("userWelcome").textContent = "Nome de usuário não encontrado!";
+        }
+
+        // Função para sair (destruir a sessão e voltar para o login)
+        document.getElementById("logoutBtn").addEventListener("click",
+            function(){
+                // Remove o nome de usuário do localStorage
+                localStorage.removeItem("username");
+
+                // Redireciona o usuario de volta para a pagina de login
+                window.location.href = "index.html"; // Alterar para o caminho da pagina de login
+            }
+        )
+    </script>
+</body>
+</html>
