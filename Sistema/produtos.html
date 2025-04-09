@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cad-style.css">
-    <title>Cadastro - Produtos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cad-style.css">
+  <title>Cadastro - Produtos</title>
 </head>
 <body>
-    <h1>Sistema CadProd - 1.0</h1>
-    <h2>Tela de Cadastro</h2>
+  <h1>Sistema CadProd - 1.0</h1>
+  <h2>Tela de Cadastro</h2>
 
-    <p>Usuário:</p>
-    <div class="container">
-        <form action="">
 
-            <label for="">Produto</label>
-            <input type="text" name="product" id="product" placeholder="Nome do Produto">
-    
-            <label for="">Preço</label>
-            <input type="number" name="price" id="price" placeholder="Informe o Valor">
+  <p id="user-session" class="user-session">Usuário:</p>
+  <button id="logoutBtn" class="logoutBtn">Sair</button>
 
-            <label for="">Quantidade</label>
-            <input type="text" name="amount" id="amount" placeholder="Informe a Quantidade">
-    
-            <label for="">Total</label>
-            <span id="total-valor"> 0 </span>
-    
-            <div class="bt-submit">
-                <input type="submit" value="Cadastrar">
-            </div>
-    
-        </form>
-    </div>
+  <div class="container">
+    <form id="cadprod" class="cadprod" method="post" action="cad.php">
+      <label for="product" class="prod_nome">Produto</label>
+      <input type="text" name="product" id="product" placeholder="Nome do Produto">
+  
+      <label for="price">Preço (R$)</label>
+      <input type="number" name="price" id="price" placeholder="Informe o Valor">
+  
+      <label for="amount">Quantidade</label>
+      <input type="number" name="amount" id="amount" placeholder="Informe a Quantidade">
+  
+      <label for="total-valor">Total</label>
+      <span id="total-valor" name="total-valor">0</span>
+      <!-- Campo hidden para enviar o total -->
+      <input type="hidden" name="total-valor" id="total-hidden" value="0">
+      
+      <div class="bt-submit">
+        <input type="submit" value="Cadastrar">
+      </div>
+
+    </form>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>

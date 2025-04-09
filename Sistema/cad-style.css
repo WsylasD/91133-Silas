@@ -1,12 +1,45 @@
 *{
     font-weight: bold;
     box-sizing: border-box;
+    margin: 0;
 }
 
 body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: violet;
+}
+
+h1{
+    background-color: aqua;
+    padding: 30px;
+    border-bottom: 3px solid;
+    width: 100%;
+}
+
+h2{
+    background-color: rgba(153, 50, 204, 0.50);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.user-session{
+    background-color: rgba(153, 50, 204, 0.50);
+    border: 3px solid; 
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.logoutBtn{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 80px;
 }
 
 .container {
@@ -26,14 +59,20 @@ body{
     gap: 10px;
 }
 
+.prod_nome{
+    margin-top: 10px;
+}
+
 .container form input{
     text-align: center;
     border: 2px solid;
+    border-radius: 10px;
     width: 30vh;
 }
 
 
 .container form span{
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,4 +80,14 @@ body{
     border-radius: 10px;
     height: 25px;
     width: 30%;
+}
+
+.bt-submit input{
+    padding: 8px;
+    margin-bottom: 10px;
+    transition: 400ms;
+}
+
+.bt-submit input:hover{
+    background-color: rgba(153, 50, 204, 0.3);
 }
