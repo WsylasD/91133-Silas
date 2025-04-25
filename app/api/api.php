@@ -5,11 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
     exit;
 }
 
-include 'autenticar.php';
-
 include 'conexao.php';
 
 include 'insere.php';
+
+include '/view/conecta.php';
 
 echo "<script>
     alert('Cadastro realizado com sucesso!');
